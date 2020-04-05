@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag docker-registry.patst.de/patst/alexa-smarthome-skill:$GITHUB_SHA
+      run: docker build . --file Dockerfile --tag docker-registry.patst.de/patst/cert-manager-webhook-godaddy:$GITHUB_SHA
     #- uses: actions/docker/login@master
     #  env:
     #    DOCKER_REGISTRY_URL: docker.pkg.github.com
@@ -25,4 +25,4 @@ jobs:
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       run: |
         docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD $DOCKER_REGISTRY_URL
-        docker push docker-registry.patst.de/patst/alexa-smarthome-skill:$GITHUB_SHA
+        docker push docker-registry.patst.de/patst/cert-manager-webhook-godaddy:$GITHUB_SHA
