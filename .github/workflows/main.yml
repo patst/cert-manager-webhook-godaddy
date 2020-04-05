@@ -26,12 +26,12 @@ jobs:
       run: |
         docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD $DOCKER_REGISTRY_URL
         docker push docker-registry.patst.de/patst/cert-manager-webhook-godaddy:$GITHUB_SHA
-    #- name: Push helm chart
-    #  uses: Goodsmileduck/helm-push-action@v0.1.1
-    #  env:
-    #    SOURCE_DIR: '.'
-    #    CHART_FOLDER: 'deploy/godaddy-webhook'
-    #    FORCE: 'True'
-    #    CHARTMUSEUM_URL: 'https://chartmuseum.patst.de'
+    - name: Push helm chart
+      uses: Goodsmileduck/helm-push-action@v0.1.1
+      env:
+        SOURCE_DIR: '.'
+        CHART_FOLDER: 'deploy/godaddy-webhook'
+        FORCE: 'True'
+        CHARTMUSEUM_URL: 'https://chartmuseum.patst.de'
         #CHARTMUSEUM_USER: '${{ secrets.CHARTMUSEUM_USER }}'
         #CHARTMUSEUM_PASSWORD: ${{ secrets.CHARTMUSEUM_PASSWORD }}
