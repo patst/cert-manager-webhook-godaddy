@@ -1,0 +1,28 @@
+name: Build docker image
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: [self-hosted, ARM32]
+ 
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag docker-registry.patst.de/patst/alexa-smarthome-skill:$GITHUB_SHA
+    #- uses: actions/docker/login@master
+    #  env:
+    #    DOCKER_REGISTRY_URL: docker.pkg.github.com
+    #    DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+    #    DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+    - name: Push the Docker image
+      env:
+        DOCKER_REGISTRY_URL: docker-registry.patst.de
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      run: |
+        docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD $DOCKER_REGISTRY_URL
+        docker push docker-registry.patst.de/patst/alexa-smarthome-skill:$GITHUB_SHA
