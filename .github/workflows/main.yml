@@ -32,6 +32,6 @@ jobs:
         SOURCE_DIR: '.'
         CHART_FOLDER: 'deploy/godaddy-webhook'
         FORCE: 'True'
-        CHARTMUSEUM_URL: 'https://chartmuseum.patst.de'
-        #CHARTMUSEUM_USER: '${{ secrets.CHARTMUSEUM_USER }}'
-        #CHARTMUSEUM_PASSWORD: ${{ secrets.CHARTMUSEUM_PASSWORD }}
+        CHARTREPOSITORY_URL: 'https://chartmuseum.patst.de'
+        #HELM_REPO_USERNAME: '${{ secrets.CHARTMUSEUM_USER }}'
+        #HELM_REPO_PASSWORD: ${{ secrets.CHARTMUSEUM_PASSWORD }}
