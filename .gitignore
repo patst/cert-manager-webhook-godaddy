@@ -13,3 +13,6 @@
 
 # Ignore the built binary
 cert-manager-webhook-example
+
+# ignore helm tgz
+deploy/godaddy-webhook/godaddy-webhook-*.tgz
