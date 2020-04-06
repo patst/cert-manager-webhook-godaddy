@@ -27,7 +27,7 @@ jobs:
         docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD $DOCKER_REGISTRY_URL
         docker push docker-registry.patst.de/patst/cert-manager-webhook-godaddy:$GITHUB_SHA
     - name: Push helm chart
-      uses: patsz/helm-push-action@master
+      uses: patst/helm-push-action@master
       env:
         SOURCE_DIR: '.'
         CHART_FOLDER: 'deploy/godaddy-webhook'
