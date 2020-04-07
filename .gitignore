@@ -16,3 +16,7 @@ cert-manager-webhook-example
 
 # ignore helm tgz
 deploy/godaddy-webhook/godaddy-webhook-*.tgz
+
+# idea
+.idea
+*.iml
