@@ -10,7 +10,7 @@ jobs:
     runs-on: self-hosted
  
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag docker-registry.patst.de/patst/cert-manager-webhook-godaddy:$GITHUB_SHA
     - name: Push the Docker image
@@ -26,7 +26,7 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - name: Push helm chart
         uses: patst/helm-push-action@master
         env:
