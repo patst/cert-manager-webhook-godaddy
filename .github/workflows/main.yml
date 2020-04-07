@@ -8,7 +8,6 @@ on:
 jobs:
   chart-push:
     runs-on: self-hosted
-
     steps:
       - uses: actions/checkout@v2
       - name: Push helm chart
