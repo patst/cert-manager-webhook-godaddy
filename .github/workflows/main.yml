@@ -20,7 +20,7 @@ jobs:
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       run: |
         docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD $DOCKER_REGISTRY_URL
-        docker push docker-registry.patst.de/patst/cert-manager-webhook-godaddy:$GITHUB_SHA:
+        docker push docker-registry.patst.de/patst/cert-manager-webhook-godaddy:$GITHUB_SHA
   chart-push:
     runs-on: self-hosted
     steps:
