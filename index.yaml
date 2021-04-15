@@ -1,0 +1,13 @@
+apiVersion: v1
+entries:
+  godaddy-webhook:
+  - apiVersion: v1
+    appVersion: 0.1.2
+    created: "2021-04-15T13:24:06.037211223Z"
+    description: A Helm chart for Kubernetes
+    digest: c0c3260e11bb07fb00153b1a0aaa848018d9aa5953cd35d17e47fd29fab364e3
+    name: godaddy-webhook
+    urls:
+    - https://github.com/patst/cert-manager-webhook-godaddy/releases/download/godaddy-webhook-0.1.1/godaddy-webhook-0.1.1.tgz
+    version: 0.1.1
+generated: "2021-04-15T13:24:06.037215723Z"
