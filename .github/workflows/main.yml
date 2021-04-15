@@ -19,13 +19,11 @@ jobs:
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag docker-registry.patst.de/patst/cert-manager-webhook-godaddy:$GITHUB_SHA
     - name: Build and push
       id: docker_build
       uses: docker/build-push-action@v2
       with:
         context: .
         push: true
-        platforms: linux/arm/v6
-        tags: docker-registry.patst.de/patst/cert-manager-webhook-godaddy:latest
+        platforms: linux/arm/v7
+        tags: patst/cert-manager-webhook-godaddy:latest
