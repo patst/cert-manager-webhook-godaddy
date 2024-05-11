@@ -25,5 +25,5 @@ jobs:
       with:
         context: .
         push: true
-        platforms: linux/arm/v7
+        platforms: linux/amd64,linux/arm/v7
         tags: patst/cert-manager-webhook-godaddy:latest
